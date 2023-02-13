@@ -7,7 +7,8 @@
 - Install dependensi dengan `npm install`
 - Buat file `.env` dan isi dengan:
 ```
-USERNAME=your_username
-PASSWORD=your_password
+SITE="website kampusmu itu"
+NIM="your_nim"
+PASSWORD="your_password"
 ```
 - Jalankan dengan `npm start`
