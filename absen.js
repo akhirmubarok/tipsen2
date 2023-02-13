@@ -77,6 +77,7 @@ const absen = async () => {
 			}
 		} catch (err) {
 			console.log("Absen Gagal, Manual aja, Jangan Males");
+		} finally {
 			await browser.close();
 		}
 	})();
