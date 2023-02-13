@@ -1,0 +1,18 @@
+{
+  "name": "tipsen2.0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "node-cron": "^3.0.2",
+    "puppeteer": "^19.7.0"
+  }
+}
