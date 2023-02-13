@@ -4,7 +4,7 @@ const absen = require("./absen");
 // UTC
 
 // sesi 1 = 07:20 WIB = 00:20 UTC
-const sesi1 = cron.schedule("15 * * * *", async () => {
+const sesi1 = cron.schedule("*/15 * * * *", async () => {
 	console.log("Sesi 1");
 	absen();
 });
