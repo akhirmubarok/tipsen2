@@ -10,8 +10,8 @@ const sesi1 = cron.schedule("50 20 * * *", async () => {
 });
 
 // sesi 2 = 09:00 WIB = 02:00 UTC
-const sesi2 = cron.schedule("1 2 * * *", async () => {
-    absen();
+const sesi2 = cron.schedule("0 14 * * *", async () => {
+	absen();
 });
 
 // sesi 3 = 10:00 WIB = 03:00 UTC
