@@ -11,7 +11,7 @@ const absen = async () => {
 				"--hide-scrollbars",
 				"--disable-web-security",
 			],
-			headless: false,
+			// headless: false,
 		};
 		let browser = await puppeteer.launch(options);
 
