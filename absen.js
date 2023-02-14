@@ -78,6 +78,8 @@ const absen = async () => {
 		} catch (err) {
 			console.log("Absen Gagal, Manual aja, Jangan Males");
 		} finally {
+			// wait for 10 seconds
+			await page.waitForTimeout(10000);
 			await browser.close();
 		}
 	})();
