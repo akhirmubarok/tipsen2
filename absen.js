@@ -2,6 +2,12 @@ const puppeteer = require("puppeteer");
 const dotenv = require("dotenv");
 dotenv.config();
 
+function delay(time) {
+	return new Promise(function (resolve) {
+		setTimeout(resolve, time);
+	});
+}
+
 const absen = async () => {
 	(async () => {
 		let options = {
@@ -63,6 +69,8 @@ const absen = async () => {
 				console.log(
 					`Absen Sukses Pada ${hour}:${minute}:${second} - ${day}/${month}/${year}`
 				);
+
+				await delay(10000);
 			} catch (error) {
 				let date = new Date();
 				let hour = date.getHours() + 7;
@@ -75,11 +83,11 @@ const absen = async () => {
 					`Tidak ada jadwal absen pada  ${hour}:${minute}:${second} - ${day}/${month}/${year}`
 				);
 			}
+			// wait for 10 seconds
 		} catch (err) {
 			console.log("Absen Gagal, Manual aja, Jangan Males");
 		} finally {
 			// wait for 10 seconds
-			await page.waitForTimeout(10000);
 			await browser.close();
 		}
 	})();

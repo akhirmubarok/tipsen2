@@ -4,10 +4,10 @@ const getTime = require("./getTime");
 
 // UTC
 
-// const tryAbsen = cron.schedule("*/1 * * * *", async () => {
+// const tryAbsen = cron.schedule("*/3 * * * *", async () => {
 // 	let { hour, minute, second, day, month, year } = getTime();
 // 	console.log(`${day}/${month}/${year} - ${hour}:${minute}:${second} UTC`);
-// 	// absen();
+// 	absen();
 // });
 
 
