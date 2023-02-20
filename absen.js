@@ -1,6 +1,7 @@
 const puppeteer = require("puppeteer");
 const dotenv = require("dotenv");
 dotenv.config();
+const getTime = require("./getTime");
 
 function delay(time) {
 	return new Promise(function (resolve) {
@@ -8,7 +9,7 @@ function delay(time) {
 	});
 }
 
-const absen = async () => {
+const absen = async (props) => {
 	(async () => {
 		let options = {
 			args: [
@@ -17,7 +18,7 @@ const absen = async () => {
 				"--hide-scrollbars",
 				"--disable-web-security",
 			],
-			// headless: false,
+			headless: false,
 		};
 		let browser = await puppeteer.launch(options);
 
@@ -52,46 +53,38 @@ const absen = async () => {
 			await page.waitForNavigation({ waitUntil: "load", timeout: 240000 });
 
 			try {
+				// open absen page
 				await page.waitForSelector("a.mantine-cih264");
 				await page.click("a.mantine-cih264");
 
+				// click tandai kehadiran
 				await page.waitForSelector("button.mantine-1k5x82x");
 				await page.click("button.mantine-1k5x82x");
 
-				let date = new Date();
-				let hour = date.getHours() + 7;
-				let minute = date.getMinutes();
-				let second = date.getSeconds();
-				let day = date.getDate();
-				let month = date.getMonth() + 1;
-				let year = date.getFullYear();
+				// get text mata kuliah
+				await page.waitForSelector("h1.mantine-ko99gt");
+				let text = await page.evaluate(() => {
+					let element = document.querySelector("h1.mantine-ko99gt");
+					return element.textContent;
+				});
 
+				let { hour, minute, second, day, month, year } = getTime();
 				console.log(
-					`Absen Sukses Pada ${hour}:${minute}:${second} - ${day}/${month}/${year}`
+					`${props} Absen Mata Kuliah ${text} Sukses Pada ${hour}:${minute}:${second}`
 				);
-
+				// wait for 10 seconds
 				await delay(10000);
 			} catch (error) {
-				let date = new Date();
-				let hour = date.getHours() + 7;
-				let minute = date.getMinutes();
-				let second = date.getSeconds();
-				let day = date.getDate();
-				let month = date.getMonth() + 1;
-				let year = date.getFullYear();
 				console.log(
-					`Tidak ada jadwal absen pada  ${hour}:${minute}:${second} - ${day}/${month}/${year}`
+					`${props} tidak ada jadwal absen`
 				);
 			}
-			// wait for 10 seconds
 		} catch (err) {
-			console.log("Absen Gagal, Manual aja, Jangan Males");
+			console.log(`${props} Absen Gagal :(`);
 		} finally {
-			// wait for 10 seconds
 			await browser.close();
 		}
 	})();
 };
 
-// export function
 module.exports = absen;
