@@ -10,8 +10,8 @@ const getTime = require("./getTime");
 // 	absen("Sesi 1");
 // });
 
-// sesi 1 = 07:20 WIB = 00:20 UTC
-const sesi1 = cron.schedule("21 0 * * 1-5", async () => {
+// sesi 1 = 07:10 WIB = 00:10 UTC
+const sesi1 = cron.schedule("11 0 * * 1-5", async () => {
 	let {  day, year, dayName, monthName } =
 		getTime();
 	console.log(
