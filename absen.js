@@ -54,17 +54,17 @@ const absen = async (props) => {
 
 			try {
 				// open absen page
-				await page.waitForSelector("a.mantine-cih264");
-				await page.click("a.mantine-cih264");
+				await page.waitForSelector("button.mantine-phjzx1");
+				await page.click("button.mantine-phjzx1");
 
 				// click tandai kehadiran
-				await page.waitForSelector("button.mantine-Button-root");
-				await page.click("button.mantine-Button-root");
+				// await page.waitForSelector("button.mantine-Button-root");
+				// await page.click("button.mantine-Button-root");
 
 				// get text mata kuliah
-				await page.waitForSelector("h1.mantine-Title-root");
+				await page.waitForSelector("h1.mantine-ko99gt");
 				let text = await page.evaluate(() => {
-					let element = document.querySelector("h1.mantine-Title-root");
+					let element = document.querySelector("h1.mantine-ko99gt");
 					return element.textContent;
 				});
 
