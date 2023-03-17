@@ -1,4 +1,4 @@
-# Otomasi Absen v2.0
+# [Otomasi Absen v2.0](https://github.com/nubisub/tipsen2/wiki)
 - Cron Job - [node-cron](https://www.npmjs.com/package/node-cron)
 - Headless Browser - [puppeteer](https://www.npmjs.com/package/puppeteer)
 
