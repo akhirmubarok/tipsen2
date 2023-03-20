@@ -3,10 +3,10 @@ const absen = require("./absen");
 const getTime = require("./getTime");
 
 // const tryAbsen =  async () => {
-// 	// let { day, year, dayName, monthName } = getTime();
-// 	// console.log(
-// 	// 	`================== ${dayName} ${day} ${monthName} ${year} ==================`
-// 	// );
+// 	let { day, year, dayName, monthName } = getTime();
+// 	console.log(
+// 		`================== ${dayName} ${day} ${monthName} ${year} ==================`
+// 	);
 // 	absen("Sesi 1");
 // };
 
