@@ -2,13 +2,13 @@ const cron = require("node-cron");
 const absen = require("./absen");
 const getTime = require("./getTime");
 
-// const tryAbsen =  async () => {
-// 	let { day, year, dayName, monthName } = getTime();
-// 	console.log(
-// 		`================== ${dayName} ${day} ${monthName} ${year} ==================`
-// 	);
-// 	absen("Sesi 1");
-// };
+const tryAbsen =  async () => {
+	let { day, year, dayName, monthName } = getTime();
+	console.log(
+		`================== ${dayName} ${day} ${monthName} ${year} ==================`
+	);
+	absen("Sesi 1");
+};
 
 // sesi 1 = 07:10 WIB = 00:10 UTC
 const sesi1 = cron.schedule("11 0 * * 1-5", async () => {
