@@ -54,23 +54,29 @@ const absen = async (props) => {
 
 			try {
 				// open absen page
-				await page.waitForSelector("button.mantine-phjzx1");
-				await page.click("button.mantine-phjzx1");
+				// await page.waitForSelector("button.mantine-phjzx1");
+				// await page.click("button.mantine-phjzx1");
 
+				// click tandai kehadiran
+				await page.waitForSelector(".mantine-phjzx1 .mantine-qo1k2");
+				await page.click(".mantine-phjzx1 .mantine-qo1k2");
+
+
+				
 				// click tandai kehadiran
 				// await page.waitForSelector("button.mantine-Button-root");
 				// await page.click("button.mantine-Button-root");
 
 				// get text mata kuliah
-				await page.waitForSelector("div.mantine-1iw28cd");
-				let text = await page.evaluate(() => {
-					let element = document.querySelector("div.mantine-1iw28cd");
-					return element.textContent;
-				});
+				// await page.waitForSelector("div.mantine-1iw28cd");
+				// let text = await page.evaluate(() => {
+				// 	let element = document.querySelector("div.mantine-1iw28cd");
+				// 	return element.textContent;
+				// });
 
 				let { hour, minute, second, day, month, year } = getTime();
 				console.log(
-					`${props} Absen Mata Kuliah ${text} Sukses Pada ${hour}:${minute}:${second}`
+					`${props} Absen Sukses Pada ${hour}:${minute}:${second}`
 				);
 				// wait for 10 seconds
 				await delay(10000);
