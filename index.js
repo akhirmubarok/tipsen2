@@ -51,4 +51,4 @@ sesi3.start();
 sesi4.start();
 sesi5.start();
 sesi6.start();
-// tryAbsen();
+tryAbsen();
